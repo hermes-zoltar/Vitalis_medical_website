@@ -1,0 +1,1742 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Vitalis Medical Centre | World-Class Healthcare, Victoria Island Lagos</title>
+<meta name="description" content="Vitalis Medical Centre. Board-certified specialists, same-day appointments and cutting-edge diagnostics on Victoria Island, Lagos. Your health deserves the best."/>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Manrope:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/css/bootstrap.min.css"/>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+<style>
+/* ── TOKENS ── */
+:root {
+  --navy:        #0B1628;
+  --navy-2:      #0F1E38;
+  --navy-3:      #152344;
+  --navy-4:      #1C2E55;
+  --navy-light:  #243666;
+  --white:       #FFFFFF;
+  --off-white:   #F7F9FC;
+  --cream:       #F0F4F8;
+  --gold:        #C8972A;
+  --gold-light:  #E5B84A;
+  --gold-dim:    rgba(200,151,42,0.12);
+  --gold-border: rgba(200,151,42,0.25);
+  --text-1:      #FFFFFF;
+  --text-2:      rgba(255,255,255,0.65);
+  --text-3:      rgba(255,255,255,0.38);
+  --border:      rgba(255,255,255,0.08);
+  --border-gold: rgba(200,151,42,0.2);
+  --font-head:   'Instrument Serif', serif;
+  --font-body:   'Manrope', sans-serif;
+  --font-mono:   'JetBrains Mono', monospace;
+}
+
+/* ── BASE ── */
+*, *::before, *::after { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  font-family: var(--font-body);
+  background: var(--navy);
+  color: var(--text-1);
+  overflow-x: hidden;
+  max-width: 100vw;
+}
+img { display: block; max-width: 100%; }
+a { text-decoration: none; color: inherit; }
+
+::-webkit-scrollbar { width: 3px; }
+::-webkit-scrollbar-track { background: var(--navy); }
+::-webkit-scrollbar-thumb { background: var(--gold); }
+
+/* ── TYPOGRAPHY ── */
+.display-serif {
+  font-family: var(--font-head);
+  font-size: clamp(3rem, 6vw, 5.5rem);
+  font-weight: 400;
+  line-height: 1.08;
+  letter-spacing: -0.02em;
+}
+.display-serif em {
+  font-style: italic;
+  color: var(--gold-light);
+}
+.heading-serif {
+  font-family: var(--font-head);
+  font-size: clamp(2rem, 4vw, 3.5rem);
+  font-weight: 400;
+  line-height: 1.12;
+  letter-spacing: -0.02em;
+}
+.heading-serif em {
+  font-style: italic;
+  color: var(--gold-light);
+}
+.label-mono {
+  font-family: var(--font-mono);
+  font-size: 0.65rem;
+  font-weight: 500;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--gold);
+}
+.label-mono::before {
+  content: '';
+  margin-right: 8px;
+  opacity: 0.6;
+}
+
+/* ── NAV ── */
+.vt-nav {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 1000;
+  padding: 1.4rem 0;
+  transition: background 0.35s, padding 0.3s, border-color 0.3s;
+  border-bottom: 1px solid transparent;
+}
+.vt-nav.stuck {
+  background: rgba(11,22,40,0.97);
+  padding: 0.9rem 0;
+  border-bottom-color: var(--border);
+  backdrop-filter: blur(12px);
+}
+.nav-brand {
+  font-family: var(--font-head);
+  font-size: 1.25rem;
+  font-weight: 400;
+  color: var(--white);
+  letter-spacing: -0.01em;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.nav-brand-icon {
+  width: 32px; height: 32px;
+  background: var(--gold);
+  display: flex; align-items: center; justify-content: center;
+  font-size: 0.8rem; color: var(--navy);
+}
+.nav-link-vt {
+  font-size: 0.78rem;
+  font-weight: 500;
+  color: var(--text-2) !important;
+  transition: color 0.2s !important;
+  padding: 0.3rem 0 !important;
+  letter-spacing: 0.02em;
+}
+.nav-link-vt:hover { color: var(--white) !important; }
+
+.btn-nav-book {
+  font-family: var(--font-body);
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  background: var(--gold);
+  color: var(--navy) !important;
+  border: none;
+  padding: 0.65rem 1.5rem;
+  transition: background 0.2s, transform 0.2s;
+  border-radius: 2px;
+  white-space: nowrap;
+}
+
+@media (max-width: 768px) {
+  .btn-nav-book {
+    font-size: 0.65rem;
+    padding: 0.5rem 0.9rem;
+    letter-spacing: 0.04em;
+  }
+  .nav-brand {
+    font-size: 1rem;
+  }
+}
+
+.btn-nav-book:hover { background: var(--gold-light); transform: translateY(-1px); }
+.btn-burger {
+  color: var(--white);
+  font-size: 1.2rem;
+}
+
+#mobNav {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: var(--navy);
+  z-index: 9999;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+}
+#mobNav.open { display: flex; }
+
+/* ── HERO ── */
+.hero {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  overflow: hidden;
+  background: var(--navy);
+}
+
+.hero-bg {
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%;
+  height: 100%;
+  background:
+    linear-gradient(160deg, rgba(11,22,40,0.55) 0%, rgba(11,22,40,0.4) 40%, rgba(11,22,40,0.85) 100%),
+    url('https://images.unsplash.com/photo-1551190822-a9333d879b1f?w=1800&auto=format&fit=crop&q=85') center/cover no-repeat;
+  z-index: 0;
+}
+
+.hero-accent {
+  position: absolute;
+  top: 0; right: 0;
+  width: 40%;
+  height: 100%;
+  background: linear-gradient(to left, rgba(200,151,42,0.06) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+  padding: 7rem 0 3rem;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.hero-pulse-line {
+  margin-bottom: 2rem;
+}
+.pulse-svg {
+  width: 180px;
+  height: 36px;
+  display: block;
+}
+
+.hero-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(200,151,42,0.15);
+  border: 1px solid var(--border-gold);
+  padding: 6px 14px;
+  margin-bottom: 2rem;
+  border-radius: 2px;
+}
+.hero-badge span {
+  font-family: var(--font-mono);
+  font-size: 0.62rem;
+  font-weight: 500;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--gold-light);
+}
+.hero-badge-dot {
+  width: 6px; height: 6px;
+  border-radius: 50%;
+  background: var(--gold);
+  animation: pulse 2s infinite;
+}
+.hero-sub {
+  font-size: 1.1rem;
+  font-weight: 300;
+  color: var(--text-2);
+  max-width: 520px;
+  line-height: 1.8;
+  margin-bottom: 2.5rem;
+}
+.btn-primary-vt {
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  background: var(--gold);
+  color: var(--navy);
+  padding: 1rem 2rem;
+  border: none;
+  border-radius: 2px;
+  transition: background 0.2s, transform 0.2s;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+.btn-primary-vt:hover { background: var(--gold-light); transform: translateY(-2px); color: var(--navy); }
+.btn-outline-vt {
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--white);
+  border: 1px solid var(--border);
+  padding: 1rem 2rem;
+  border-radius: 2px;
+  transition: border-color 0.2s, color 0.2s;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: none;
+}
+.btn-outline-vt:hover { border-color: var(--gold); color: var(--gold-light); }
+
+/* hero stats bar */
+
+.hero-stats {
+  position: relative;
+  z-index: 2;
+  background: rgba(15,30,56,0.92);
+  border-top: 1px solid var(--border-gold);
+  backdrop-filter: blur(12px);
+  }
+
+.hero-stat-item {
+  padding: 2rem 2.5rem;
+  border-right: 1px solid var(--border);
+}
+.hero-stat-item:last-child { border-right: none; }
+.hs-num {
+  font-family: var(--font-head);
+  font-size: 2.5rem;
+  font-weight: 400;
+  color: var(--gold-light);
+  line-height: 1;
+  margin-bottom: 4px;
+}
+.hs-label {
+  font-family: var(--font-mono);
+  font-size: 0.6rem;
+  font-weight: 400;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--text-3);
+}
+
+/* ── QUICK ACCESS ── */
+.quick-access {
+  background: var(--navy-2);
+  border-bottom: 1px solid var(--border);
+}
+.qa-item {
+  display: flex;
+  align-items: center;
+  gap: 1.2rem;
+  padding: 2rem 2.5rem;
+  border-right: 1px solid var(--border);
+  transition: background 0.2s;
+  text-decoration: none;
+  color: inherit;
+}
+.qa-item:last-child { border-right: none; }
+.qa-item:hover { background: var(--navy-3); }
+.qa-icon {
+  width: 44px; height: 44px;
+  background: var(--gold-dim);
+  border: 1px solid var(--border-gold);
+  display: flex; align-items: center; justify-content: center;
+  color: var(--gold);
+  font-size: 1rem;
+  flex-shrink: 0;
+  border-radius: 2px;
+}
+.qa-label {
+  font-family: var(--font-mono);
+  font-size: 0.58rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--text-3);
+  margin-bottom: 3px;
+}
+.qa-val {
+  font-size: 0.88rem;
+  font-weight: 600;
+  color: var(--white);
+}
+
+/* ── SECTIONS ── */
+.vt-section { padding: 7rem 0; }
+.vt-section-lg { padding: 9rem 0; }
+
+/* ── STATEMENT ── */
+.statement-section {
+  background: var(--navy-2);
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+}
+.statement-quote {
+  font-family: var(--font-head);
+  font-size: clamp(1.5rem, 3vw, 2.4rem);
+  font-weight: 400;
+  font-style: italic;
+  line-height: 1.45;
+  color: var(--white);
+  letter-spacing: -0.01em;
+  border-left: 3px solid var(--gold);
+  padding-left: 2rem;
+}
+.statement-body {
+  font-size: 1rem;
+  font-weight: 300;
+  color: var(--text-2);
+  line-height: 1.85;
+}
+.statement-body p { margin-bottom: 1rem; }
+.statement-body p:last-child { margin-bottom: 0; }
+
+/* ── SERVICES ── */
+.services-section { background: var(--navy); }
+.service-card {
+  background: var(--navy-2);
+  border: 1px solid var(--border);
+  border-radius: 2px;
+  padding: 2.5rem;
+  height: 100%;
+  position: relative;
+  overflow: hidden;
+  transition: border-color 0.3s, background 0.3s, transform 0.3s;
+}
+.service-card::after {
+  content: '';
+  position: absolute;
+  bottom: 0; left: 0; right: 0; height: 2px;
+  background: var(--gold);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.4s;
+}
+.service-card:hover {
+  border-color: var(--border-gold);
+  background: var(--navy-3);
+  transform: translateY(-4px);
+}
+.service-card:hover::after { transform: scaleX(1); }
+.sc-num {
+  font-family: var(--font-mono);
+  font-size: 0.58rem;
+  letter-spacing: 0.18em;
+  color: var(--gold);
+  opacity: 0.6;
+  margin-bottom: 1.5rem;
+}
+.sc-icon {
+  width: 48px; height: 48px;
+  background: var(--gold-dim);
+  border: 1px solid var(--border-gold);
+  display: flex; align-items: center; justify-content: center;
+  color: var(--gold);
+  font-size: 1.1rem;
+  margin-bottom: 1.5rem;
+  border-radius: 2px;
+}
+.sc-title {
+  font-family: var(--font-head);
+  font-size: 1.25rem;
+  font-weight: 400;
+  color: var(--white);
+  margin-bottom: 0.8rem;
+  line-height: 1.3;
+}
+.sc-body {
+  font-size: 0.85rem;
+  font-weight: 300;
+  color: var(--text-2);
+  line-height: 1.8;
+  margin-bottom: 1.5rem;
+}
+.sc-link {
+  font-family: var(--font-mono);
+  font-size: 0.62rem;
+  font-weight: 500;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--gold);
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  transition: gap 0.2s;
+  text-decoration: none;
+}
+.sc-link:hover { gap: 10px; color: var(--gold-light); }
+
+/* ── WHY VITALIS ── */
+.why-section {
+  background: var(--navy-2);
+  border-top: 1px solid var(--border);
+}
+.why-image-wrap {
+  position: relative;
+}
+.why-image {
+  width: 100%;
+  aspect-ratio: 4/5;
+  object-fit: cover;
+  filter: brightness(0.85) saturate(0.9);
+  border-radius: 2px;
+}
+.why-accreditation {
+  position: absolute;
+  bottom: -1.5rem;
+  right: -1.5rem;
+  background: var(--gold);
+  color: var(--navy);
+  padding: 1.5rem 2rem;
+  border-radius: 2px;
+  max-width: 200px;
+}
+.wa-icon {
+  font-size: 1.5rem;
+  margin-bottom: 8px;
+  display: block;
+}
+.wa-title {
+  font-family: var(--font-head);
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.3;
+  margin-bottom: 3px;
+}
+.wa-sub {
+  font-size: 0.7rem;
+  font-weight: 500;
+  opacity: 0.75;
+}
+.why-item {
+  padding: 2rem 0;
+  border-bottom: 1px solid var(--border);
+}
+.why-item:last-child { border-bottom: none; }
+.wi-num {
+  font-family: var(--font-mono);
+  font-size: 0.65rem;
+  font-weight: 700;
+  color: var(--gold);
+  letter-spacing: 0.1em;
+  margin-bottom: 0.5rem;
+}
+.wi-title {
+  font-family: var(--font-head);
+  font-size: 1.15rem;
+  font-weight: 400;
+  color: var(--white);
+  margin-bottom: 0.5rem;
+}
+.wi-body {
+  font-size: 0.88rem;
+  font-weight: 300;
+  color: var(--text-2);
+  line-height: 1.8;
+}
+
+/* ── DOCTORS ── */
+.doctors-section { background: var(--navy); }
+.doctor-card {
+  background: var(--navy-2);
+  border: 1px solid var(--border);
+  border-radius: 2px;
+  overflow: hidden;
+  transition: border-color 0.3s, transform 0.3s;
+  height: 100%;
+}
+.doctor-card:hover {
+  border-color: var(--border-gold);
+  transform: translateY(-4px);
+}
+.doctor-photo {
+  width: 100%;
+  aspect-ratio: 3/4;
+  object-fit: cover;
+  object-position: top center;
+  filter: grayscale(0.2) brightness(0.9);
+  transition: filter 0.4s;
+  background: var(--navy-3);
+}
+.doctor-card:hover .doctor-photo {
+  filter: grayscale(0) brightness(1);
+}
+.doctor-specialty {
+  background: var(--gold);
+  color: var(--navy);
+  padding: 6px 14px;
+  font-family: var(--font-mono);
+  font-size: 0.6rem;
+  font-weight: 500;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+}
+.doctor-body { padding: 1.8rem; }
+.doctor-name {
+  font-family: var(--font-head);
+  font-size: 1.2rem;
+  font-weight: 400;
+  color: var(--white);
+  margin-bottom: 4px;
+}
+.doctor-title {
+  font-size: 0.8rem;
+  font-weight: 300;
+  color: var(--text-2);
+  margin-bottom: 1.5rem;
+  line-height: 1.5;
+}
+.doctor-stats {
+  display: flex;
+  gap: 0;
+  border-top: 1px solid var(--border);
+  padding-top: 1.2rem;
+}
+.ds-item {
+  flex: 1;
+  text-align: center;
+  border-right: 1px solid var(--border);
+  padding: 0 0.5rem;
+}
+.ds-item:last-child { border-right: none; }
+.ds-num {
+  font-family: var(--font-head);
+  font-size: 1.1rem;
+  font-weight: 400;
+  color: var(--gold-light);
+  line-height: 1;
+  margin-bottom: 3px;
+}
+.ds-label {
+  font-family: var(--font-mono);
+  font-size: 0.55rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--text-3);
+}
+
+/* ── TESTIMONIALS ── */
+.testimonials-section {
+  background: var(--navy-2);
+  border-top: 1px solid var(--border);
+}
+.testimonial-card {
+  background: var(--navy-3);
+  border: 1px solid var(--border);
+  border-radius: 2px;
+  padding: 2.5rem;
+  height: 100%;
+  position: relative;
+  transition: border-color 0.3s, transform 0.3s;
+}
+.testimonial-card:hover {
+  border-color: var(--border-gold);
+  transform: translateY(-4px);
+}
+.tc-quote-mark {
+  font-family: var(--font-head);
+  font-size: 5rem;
+  font-style: italic;
+  color: var(--gold);
+  opacity: 0.15;
+  line-height: 0.8;
+  margin-bottom: 1rem;
+  display: block;
+}
+.tc-stars {
+  color: var(--gold);
+  font-size: 0.72rem;
+  letter-spacing: 3px;
+  margin-bottom: 1.2rem;
+}
+.tc-text {
+  font-family: var(--font-head);
+  font-size: 1rem;
+  font-weight: 400;
+  font-style: italic;
+  color: var(--text-1);
+  line-height: 1.8;
+  margin-bottom: 1.8rem;
+}
+.tc-author {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+.tc-avatar {
+  width: 42px; height: 42px;
+  background: var(--navy-4);
+  border: 1px solid var(--border-gold);
+  display: flex; align-items: center; justify-content: center;
+  font-family: var(--font-head);
+  font-size: 1rem;
+  font-weight: 400;
+  color: var(--gold-light);
+  flex-shrink: 0;
+  border-radius: 50%;
+}
+.tc-name {
+  font-size: 0.88rem;
+  font-weight: 600;
+  color: var(--white);
+}
+.tc-detail {
+  font-size: 0.75rem;
+  font-weight: 300;
+  color: var(--text-3);
+  margin-top: 2px;
+}
+
+/* ── URGENCY BANNER ── */
+.urgency-banner {
+  background: var(--gold);
+  padding: 5rem 0;
+}
+.ub-h2 {
+  font-family: var(--font-head);
+  font-size: clamp(2rem, 4.5vw, 3.5rem);
+  font-weight: 400;
+  line-height: 1.15;
+  color: var(--navy);
+  letter-spacing: -0.02em;
+}
+.ub-sub {
+  font-size: 1rem;
+  font-weight: 400;
+  color: rgba(11,22,40,0.7);
+  line-height: 1.7;
+}
+.btn-urgency {
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  background: var(--navy);
+  color: var(--white);
+  padding: 1rem 2rem;
+  border: none;
+  border-radius: 2px;
+  transition: background 0.2s, transform 0.2s;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+.btn-urgency:hover { background: var(--navy-2); transform: translateY(-2px); color: var(--white); }
+.btn-urgency-outline {
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--navy);
+  border: 2px solid var(--navy);
+  padding: 1rem 2rem;
+  border-radius: 2px;
+  background: none;
+  transition: background 0.2s;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+.btn-urgency-outline:hover { background: rgba(11,22,40,0.1); color: var(--navy); }
+
+/* ── CONTACT ── */
+.contact-section { background: var(--navy); }
+.contact-info-item {
+  padding: 2rem 0;
+  border-bottom: 1px solid var(--border);
+  display: flex;
+  align-items: flex-start;
+  gap: 1.5rem;
+}
+.contact-info-item:last-child { border-bottom: none; }
+.ci-icon {
+  width: 44px; height: 44px;
+  background: var(--gold-dim);
+  border: 1px solid var(--border-gold);
+  display: flex; align-items: center; justify-content: center;
+  color: var(--gold);
+  font-size: 1rem;
+  flex-shrink: 0;
+  border-radius: 2px;
+  margin-top: 2px;
+}
+.ci-label {
+  font-family: var(--font-mono);
+  font-size: 0.58rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--text-3);
+  margin-bottom: 4px;
+}
+.ci-val {
+  font-size: 0.95rem;
+  font-weight: 500;
+  color: var(--white);
+  line-height: 1.5;
+}
+.ci-sub {
+  font-size: 0.8rem;
+  font-weight: 300;
+  color: var(--text-2);
+  margin-top: 2px;
+}
+
+/* form */
+.form-card {
+  background: var(--navy-2);
+  border: 1px solid var(--border);
+  border-radius: 2px;
+  padding: 3rem;
+}
+.form-tag {
+  font-family: var(--font-mono);
+  font-size: 0.65rem;
+  font-weight: 500;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 2rem;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.form-label-vt {
+  display: block;
+  font-family: var(--font-mono);
+  font-size: 0.6rem;
+  font-weight: 400;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--text-3);
+  margin-bottom: 6px;
+}
+.form-control-vt {
+  width: 100%;
+  background: var(--navy-3);
+  border: 1px solid var(--border);
+  border-radius: 2px;
+  padding: 0.85rem 1rem;
+  font-family: var(--font-body);
+  font-size: 0.9rem;
+  font-weight: 300;
+  color: var(--white);
+  outline: none;
+  transition: border-color 0.25s, background 0.25s;
+  appearance: none;
+  margin-bottom: 1rem;
+}
+.form-control-vt::placeholder { color: var(--text-3); }
+.form-control-vt:focus {
+  border-color: var(--gold);
+  background: rgba(200,151,42,0.05);
+  box-shadow: none;
+}
+.form-control-vt option { background: var(--navy-2); }
+textarea.form-control-vt { resize: none; height: 90px; }
+.btn-form-submit {
+  width: 100%;
+  background: var(--gold);
+  color: var(--navy);
+  font-family: var(--font-body);
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  padding: 1.1rem;
+  border: none;
+  border-radius: 2px;
+  transition: background 0.2s, transform 0.2s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+.btn-form-submit:hover { background: var(--gold-light); transform: translateY(-1px); }
+
+/* ── FOOTER ── */
+.vt-footer {
+  background: var(--navy-2);
+  border-top: 1px solid var(--border);
+  padding: 5rem 0 2rem;
+}
+.ft-brand-name {
+  font-family: var(--font-head);
+  font-size: 1.3rem;
+  font-weight: 400;
+  color: var(--white);
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 3px;
+}
+.ft-brand-icon {
+  width: 28px; height: 28px;
+  background: var(--gold);
+  display: flex; align-items: center; justify-content: center;
+  color: var(--navy);
+  font-size: 0.7rem;
+  border-radius: 2px;
+}
+.ft-tagline {
+  font-family: var(--font-mono);
+  font-size: 0.58rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--text-3);
+  display: block;
+  margin-bottom: 1.2rem;
+}
+.ft-p {
+  font-size: 0.85rem;
+  font-weight: 300;
+  color: var(--text-2);
+  line-height: 1.8;
+  margin-bottom: 1.5rem;
+}
+.ft-social { display: flex; gap: 0.5rem; }
+.ft-social a {
+  width: 34px; height: 34px;
+  border: 1px solid var(--border);
+  border-radius: 2px;
+  display: flex; align-items: center; justify-content: center;
+  color: var(--text-2);
+  font-size: 0.8rem;
+  transition: border-color 0.2s, color 0.2s;
+  text-decoration: none;
+}
+.ft-social a:hover { border-color: var(--gold); color: var(--gold); }
+.ft-heading {
+  font-family: var(--font-mono);
+  font-size: 0.6rem;
+  font-weight: 500;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 1.4rem;
+}
+.ft-link {
+  font-size: 0.85rem;
+  font-weight: 300;
+  color: var(--text-2);
+  transition: color 0.2s;
+  display: block;
+  margin-bottom: 0.65rem;
+  text-decoration: none;
+}
+.ft-link:hover { color: var(--white); }
+.footer-divider { border-color: var(--border); margin: 2.5rem 0 1.5rem; }
+.footer-copy {
+  font-family: var(--font-mono);
+  font-size: 0.62rem;
+  color: var(--text-3);
+  letter-spacing: 0.06em;
+}
+.footer-copy a { color: rgba(200,151,42,0.6); transition: color 0.2s; }
+.footer-copy a:hover { color: var(--gold); }
+
+/* ── EMERGENCY FLOAT ── */
+.emergency-float {
+  position: fixed;
+  bottom: 2rem; right: 2rem; z-index: 99;
+  display: flex; flex-direction: column; align-items: flex-end; gap: 0.6rem;
+}
+.ef-btn {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 0.8rem 1.2rem;
+  border-radius: 2px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-decoration: none;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+.ef-btn:hover { transform: translateY(-2px); }
+.ef-whatsapp {
+  background: #25D366;
+  color: #fff;
+  box-shadow: 0 4px 18px rgba(37,211,102,0.35);
+}
+.ef-emergency {
+  background: var(--gold);
+  color: var(--navy);
+  box-shadow: 0 4px 18px rgba(200,151,42,0.35);
+}
+
+/* ── ANIMATIONS ── */
+@keyframes pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.4; }
+}
+.reveal {
+  opacity: 0;
+  transform: translateY(28px);
+  transition: opacity 0.75s ease, transform 0.75s ease;
+}
+.reveal.on { opacity: 1; transform: translateY(0); }
+
+/* ── RESPONSIVE ── */
+@media (max-width: 1024px) {
+  .vt-section { padding: 6rem 0; }
+  .vt-section-lg { padding: 7rem 0; }
+  .why-accreditation { right: 0; bottom: -1rem; }
+}
+@media (max-width: 768px) {
+  .vt-section { padding: 5rem 0; }
+  .vt-section-lg { padding: 5rem 0; }
+  .hero-stat-item { padding: 1.5rem; border-right: none; border-bottom: 1px solid var(--border); }
+  
+  .hero-content {
+    padding: 5rem 0 2rem;
+  }
+  .hero-sub {
+    font-size: 0.9rem;
+    max-width: 100%;
+  }
+  .display-serif {
+    font-size: clamp(2.2rem, 10vw, 3rem);
+  }
+  .hero-btns {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .btn-primary-vt,
+  .btn-outline-vt {
+    width: 100%;
+    justify-content: center;
+  }
+  
+  .hero-stat-item:last-child { border-bottom: none; }
+  .qa-item { border-right: none; border-bottom: 1px solid var(--border); }
+  .qa-item:last-child { border-bottom: none; }
+  .why-image { aspect-ratio: 16/9; }
+  .why-accreditation { display: none; }
+  .urgency-banner { padding: 4rem 0; }
+  .emergency-float { bottom: 1rem; right: 1rem; }
+  .ef-btn span { display: none; }
+  .form-card { padding: 2rem; }
+  .vt-footer { padding: 4rem 0 2rem; }
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav class="vt-nav" id="nav">
+  <div class="container">
+    <div class="d-flex align-items-center justify-content-between">
+      <a href="#" class="nav-brand">
+        <div class="nav-brand-icon"><i class="fas fa-plus"></i></div>
+        Vitalis Medical
+      </a>
+      <ul class="d-none d-lg-flex align-items-center gap-4 list-unstyled mb-0">
+        <li><a href="#services" class="nav-link-vt">Services</a></li>
+        <li><a href="#doctors" class="nav-link-vt">Our Doctors</a></li>
+        <li><a href="#about" class="nav-link-vt">About</a></li>
+        <li><a href="#testimonials" class="nav-link-vt">Patients</a></li>
+        <li><a href="#contact" class="nav-link-vt">Contact</a></li>
+      </ul>
+      <div class="d-flex align-items-center gap-3">
+        <a href="tel:+2348000000000" class="d-none d-lg-flex align-items-center gap-2" style="font-size:0.78rem;font-weight:500;color:var(--text-2);">
+          <i class="fas fa-phone" style="color:var(--gold);font-size:0.75rem;"></i>
+          Emergency 24/7
+        </a>
+        <a href="#contact" class="btn-nav-book">Book Appointment</a>
+        <button class="d-lg-none btn-burger btn p-1" id="burger">
+          <i class="fas fa-bars"></i>
+        </button>
+      </div>
+    </div>
+  </div>
+</nav>
+
+<!-- MOBILE NAV -->
+<div id="mobNav" style="display:none;position:fixed;inset:0;background:var(--navy);z-index:200;flex-direction:column;align-items:center;justify-content:center;gap:2.2rem;">
+  <button id="mobClose" style="position:absolute;top:1.5rem;right:2rem;background:none;border:none;color:var(--gold);font-size:1.5rem;cursor:pointer;">✕</button>
+  <a href="#services" class="mob-link" style="font-family:var(--font-head);font-size:2rem;color:var(--white);">Services</a>
+  <a href="#doctors" class="mob-link" style="font-family:var(--font-head);font-size:2rem;color:var(--white);">Our Doctors</a>
+  <a href="#about" class="mob-link" style="font-family:var(--font-head);font-size:2rem;color:var(--white);">About</a>
+  <a href="#testimonials" class="mob-link" style="font-family:var(--font-head);font-size:2rem;color:var(--white);">Patients</a>
+  <a href="#contact" class="mob-link" style="font-family:var(--font-head);font-size:2rem;color:var(--white);">Contact</a>
+</div>
+
+<!-- HERO -->
+<section class="hero" id="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-accent"></div>
+  <div class="hero-content">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-7 col-xl-6">
+          <div class="hero-pulse-line">
+  <svg viewBox="0 0 200 40" class="pulse-svg" xmlns="http://www.w3.org/2000/svg">
+    <polyline points="0,20 30,20 40,5 50,35 60,20 80,20 90,10 100,30 110,20 140,20 150,8 160,32 170,20 200,20"
+      fill="none" stroke="#C8972A" stroke-width="1.5"
+      stroke-dasharray="300" stroke-dashoffset="300">
+      <animate attributeName="stroke-dashoffset" from="300" to="0" dur="2s" fill="freeze"/>
+    </polyline>
+  </svg>
+</div>
+          <h1 class="display-serif mb-4">
+            Your body is<br>worth the <em>best</em><br>medical care.
+          </h1>
+          <p class="hero-sub">
+            Most people only visit a doctor when something goes wrong. By then, the window for early intervention has already closed. At Vitalis, we believe the most powerful thing medicine can do is catch what you haven't felt yet.
+          </p>
+          <div class="d-flex flex-wrap gap-3 mb-0">
+            <a href="#contact" class="btn-primary-vt">Schedule Appointment <i class="fas fa-arrow-right"></i></a>
+            <a href="#doctors" class="btn-outline-vt">Meet Our Doctors</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="hero-stats">
+    <div class="container px-0">
+      <div class="row g-0">
+        <div class="col-6 col-md-3">
+          <div class="hero-stat-item">
+            <div class="hs-num">15+</div>
+            <div class="hs-label">Years of Excellence</div>
+          </div>
+        </div>
+        <div class="col-6 col-md-3">
+          <div class="hero-stat-item">
+            <div class="hs-num">12K+</div>
+            <div class="hs-label">Patients Treated</div>
+          </div>
+        </div>
+        <div class="col-6 col-md-3">
+          <div class="hero-stat-item">
+            <div class="hs-num">98%</div>
+            <div class="hs-label">Patient Satisfaction</div>
+          </div>
+        </div>
+        <div class="col-6 col-md-3">
+          <div class="hero-stat-item">
+            <div class="hs-num">24/7</div>
+            <div class="hs-label">Emergency Care</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- QUICK ACCESS -->
+<div class="quick-access">
+  <div class="container px-0">
+    <div class="row g-0">
+      <div class="col-6 col-md-3">
+        <a href="#contact" class="qa-item">
+          <div class="qa-icon"><i class="fas fa-calendar-check"></i></div>
+          <div>
+            <div class="qa-label">Book Online</div>
+            <div class="qa-val">Schedule in minutes</div>
+          </div>
+        </a>
+      </div>
+      <div class="col-6 col-md-3">
+        <a href="#doctors" class="qa-item">
+          <div class="qa-icon"><i class="fas fa-user-doctor"></i></div>
+          <div>
+            <div class="qa-label">Find a Doctor</div>
+            <div class="qa-val">Browse specialists</div>
+          </div>
+        </a>
+      </div>
+      <div class="col-6 col-md-3">
+        <a href="#" class="qa-item">
+          <div class="qa-icon"><i class="fas fa-lock"></i></div>
+          <div>
+            <div class="qa-label">Patient Portal</div>
+            <div class="qa-val">Access your records</div>
+          </div>
+        </a>
+      </div>
+      <div class="col-6 col-md-3">
+        <a href="tel:+2348000000001" class="qa-item">
+          <div class="qa-icon"><i class="fas fa-phone-volume"></i></div>
+          <div>
+            <div class="qa-label">Emergency Line</div>
+            <div class="qa-val">Available 24/7</div>
+          </div>
+        </a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- STATEMENT -->
+<section class="statement-section vt-section" id="about">
+  <div class="container">
+    <div class="row align-items-center gy-5">
+      <div class="col-lg-5 reveal">
+        <div class="label-mono mb-4">Why This Matters</div>
+        <blockquote class="statement-quote mb-0">
+          "Most serious conditions are completely treatable when found early. The challenge is that most people never look until the pain becomes impossible to ignore."
+        </blockquote>
+      </div>
+      <div class="col-lg-6 offset-lg-1 reveal">
+        <div class="statement-body">
+          <p>There is a version of healthcare that is reactive. You wait until something breaks, then you come in and we try to fix it. That is how most clinics operate. It is not how Vitalis was built.</p>
+          <p>We built a centre where your health is managed with the same precision you apply to your business, your finances and your career. Where board-certified specialists work as a coordinated team rather than isolated practitioners. Where diagnostics happen same-day and results are interpreted by the people qualified to understand them.</p>
+          <p>If you have never had a full clinical evaluation, if your last check-up was years ago, if there is a symptom you have been quietly dismissing, this is the place to start taking it seriously. The conversation you have here might be the most important one you have all year.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section class="services-section vt-section-lg" id="services">
+  <div class="container">
+    <div class="row align-items-end mb-5 reveal">
+      <div class="col-lg-6">
+        <div class="label-mono mb-3">What We Offer</div>
+        <h2 class="heading-serif">Every dimension<br>of your health,<br><em>covered.</em></h2>
+      </div>
+      <div class="col-lg-5 offset-lg-1">
+        <p style="font-size:0.95rem;font-weight:300;color:var(--text-2);line-height:1.8;">From a routine consultation to a complex specialist procedure. Our team covers the full spectrum of medical care under one roof. No referrals lost. No gaps in your care.</p>
+      </div>
+    </div>
+    <div class="row g-4 reveal">
+      <div class="col-md-6 col-lg-3">
+        <div class="service-card">
+          <div class="sc-num">01</div>
+          <div class="sc-icon"><i class="fas fa-stethoscope"></i></div>
+          <div class="sc-title">Primary Care</div>
+          <p class="sc-body">Your first point of contact for everything. Our GPs manage chronic conditions, preventive care and long-term health with thoroughness that most clinics do not take the time to offer.</p>
+          <a href="#contact" class="sc-link">Book Consultation <i class="fas fa-arrow-right"></i></a>
+        </div>
+      </div>
+      <div class="col-md-6 col-lg-3">
+        <div class="service-card">
+          <div class="sc-num">02</div>
+          <div class="sc-icon"><i class="fas fa-baby"></i></div>
+          <div class="sc-title">Paediatrics</div>
+          <p class="sc-body">Children are not small adults. They need specialists who understand how differently their bodies work. Our paediatric team provides expert care in an environment children actually feel comfortable in.</p>
+          <a href="#contact" class="sc-link">Book Consultation <i class="fas fa-arrow-right"></i></a>
+        </div>
+      </div>
+      <div class="col-md-6 col-lg-3">
+        <div class="service-card">
+          <div class="sc-num">03</div>
+          <div class="sc-icon"><i class="fas fa-heart-pulse"></i></div>
+          <div class="sc-title">Cardiology</div>
+          <p class="sc-body">Cardiovascular disease is the leading cause of death in Nigeria. Our cardiologists use advanced diagnostics to find the problems before they become crises, not after.</p>
+          <a href="#contact" class="sc-link">Book Consultation <i class="fas fa-arrow-right"></i></a>
+        </div>
+      </div>
+      <div class="col-md-6 col-lg-3">
+        <div class="service-card">
+          <div class="sc-num">04</div>
+          <div class="sc-icon"><i class="fas fa-truck-medical"></i></div>
+          <div class="sc-title">Emergency Care</div>
+          <p class="sc-body">Our emergency department runs 24 hours, every day. Fully equipped, fully staffed by experienced emergency physicians who move at the speed that emergencies demand.</p>
+          <a href="tel:+2348000000001" class="sc-link">Call Emergency Line <i class="fas fa-arrow-right"></i></a>
+        </div>
+      </div>
+      <div class="col-md-6 col-lg-3">
+        <div class="service-card">
+          <div class="sc-num">05</div>
+          <div class="sc-icon"><i class="fas fa-bone"></i></div>
+          <div class="sc-title">Orthopaedics</div>
+          <p class="sc-body">Pain that limits what you can do is not something you should learn to live with. Our orthopaedic surgeons specialise in getting you back to full function, through surgery or without it.</p>
+          <a href="#contact" class="sc-link">Book Consultation <i class="fas fa-arrow-right"></i></a>
+        </div>
+      </div>
+      <div class="col-md-6 col-lg-3">
+        <div class="service-card">
+          <div class="sc-num">06</div>
+          <div class="sc-icon"><i class="fas fa-flask"></i></div>
+          <div class="sc-title">Diagnostics & Lab</div>
+          <p class="sc-body">Same-day results from our in-house laboratory and imaging centre. MRI, CT, ultrasound and full blood work. Interpreted by the specialists on site, not sent out and returned days later.</p>
+          <a href="#contact" class="sc-link">Book Consultation <i class="fas fa-arrow-right"></i></a>
+        </div>
+      </div>
+      <div class="col-md-6 col-lg-3">
+        <div class="service-card">
+          <div class="sc-num">07</div>
+          <div class="sc-icon"><i class="fas fa-brain"></i></div>
+          <div class="sc-title">Neurology</div>
+          <p class="sc-body">Headaches, memory issues, numbness, seizures. Neurological symptoms are easy to dismiss and difficult to ignore once they progress. Our neurologists diagnose early and treat precisely.</p>
+          <a href="#contact" class="sc-link">Book Consultation <i class="fas fa-arrow-right"></i></a>
+        </div>
+      </div>
+      <div class="col-md-6 col-lg-3">
+        <div class="service-card">
+          <div class="sc-num">08</div>
+          <div class="sc-icon"><i class="fas fa-eye"></i></div>
+          <div class="sc-title">Ophthalmology</div>
+          <p class="sc-body">Vision loss is gradual until it isn't. Our ophthalmologists provide complete eye care. From routine assessment to surgical intervention,  protecting the sense most people take for granted until it fades.</p>
+          <a href="#contact" class="sc-link">Book Consultation <i class="fas fa-arrow-right"></i></a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WHY VITALIS -->
+<section class="why-section vt-section-lg" id="why">
+  <div class="container">
+    <div class="row align-items-center gy-5 gx-lg-5">
+      <div class="col-lg-5 reveal">
+        <div class="why-image-wrap">
+          <img src="https://images.unsplash.com/photo-1576091160550-2173dba999ef?w=700&auto=format&fit=crop&q=80"
+            alt="Vitalis Medical Team"
+            class="why-image"/>
+          <div class="why-accreditation">
+            <span class="wa-icon"><i class="fas fa-award" style="color:var(--navy)"></i></span>
+            <div class="wa-title">Accredited Centre of Excellence</div>
+            <div class="wa-sub">Internationally recognised standards</div>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-6 offset-lg-1 reveal">
+        <div class="label-mono mb-3">Why Vitalis</div>
+        <h2 class="heading-serif mb-5">Medicine the<br>way it <em>should</em><br>always be.</h2>
+        <div class="why-item">
+          <div class="wi-num">01</div>
+          <div class="wi-title">Board-Certified Specialists Only</div>
+          <p class="wi-body mb-0">Every physician at Vitalis holds international board certification and brings a minimum of 10 years of specialised clinical experience. When you see a specialist here, you are seeing someone who has spent their entire career focused on exactly what you need.</p>
+        </div>
+        <div class="why-item">
+          <div class="wi-num">02</div>
+          <div class="wi-title">Same-Day Appointments</div>
+          <p class="wi-body mb-0">We respect the fact that your time is not flexible. Urgent consultations are available same-day. Routine appointments within 48 hours. You do not wait weeks to be seen when weeks matter.</p>
+        </div>
+        <div class="why-item">
+          <div class="wi-num">03</div>
+          <div class="wi-title">Integrated Care Across Departments</div>
+          <p class="wi-body mb-0">Your health history moves with you across every department. No referral gets lost. No detail gets overlooked. The cardiologist knows what the neurologist found. That coordination is what good medicine actually looks like.</p>
+        </div>
+        <div class="why-item">
+          <div class="wi-num">04</div>
+          <div class="wi-title">Complete Pricing Transparency</div>
+          <p class="wi-body mb-0">You know what you are paying before you commit. No hidden fees. No billing surprises. We accept all major HMOs and offer flexible payment plans for private patients.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- DOCTORS -->
+<section class="doctors-section vt-section-lg" id="doctors">
+  <div class="container">
+    <div class="row align-items-end mb-5 reveal">
+      <div class="col-lg-6">
+        <div class="label-mono mb-3">Our Team</div>
+        <h2 class="heading-serif">The people<br>responsible for<br><em>your care.</em></h2>
+      </div>
+      <div class="col-lg-5 offset-lg-1 d-flex align-items-end">
+        <div>
+          <p style="font-size:0.95rem;font-weight:300;color:var(--text-2);line-height:1.8;margin-bottom:1.5rem;">Every specialist was selected for clinical brilliance and for something harder to measure; the ability to make a patient feel genuinely seen.</p>
+          <a href="#contact" class="btn-outline-vt">Book a Consultation</a>
+        </div>
+      </div>
+    </div>
+    <div class="row g-4 reveal">
+      <div class="col-md-6 col-lg-3">
+        <div class="doctor-card">
+          <img src="https://hermes-zoltar.github.io/Vitalis_medical_website/images/Dr. Adaeze Okonkwo.avif"
+            alt="Dr. Adaeze Okonkwo"
+            class="doctor-photo"
+            onerror="this.src='https://images.unsplash.com/photo-1594824476967-48c8b964273f?w=400&auto=format&fit=crop&q=75'"/>
+          <div class="doctor-specialty">Cardiology</div>
+          <div class="doctor-body">
+            <div class="doctor-name">Dr. Adaeze Okonkwo</div>
+            <div class="doctor-title">Senior Consultant Cardiologist — 18 years experience</div>
+            <div class="doctor-stats">
+              <div class="ds-item">
+                <div class="ds-num">2.4K</div>
+                <div class="ds-label">Patients</div>
+              </div>
+              <div class="ds-item">
+                <div class="ds-num">18</div>
+                <div class="ds-label">Years</div>
+              </div>
+              <div class="ds-item">
+                <div class="ds-num">4.9★</div>
+                <div class="ds-label">Rating</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-6 col-lg-3">
+        <div class="doctor-card">
+          <img src="https://hermes-zoltar.github.io/Vitalis_medical_website/images/Dr. Emeka Nwosu.avif"
+            alt="Dr. Emeka Nwosu"
+            class="doctor-photo"
+            onerror="this.src='https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?w=400&auto=format&fit=crop&q=75'"/>
+          <div class="doctor-specialty">Paediatrics</div>
+          <div class="doctor-body">
+            <div class="doctor-name">Dr. Emeka Nwosu</div>
+            <div class="doctor-title">Consultant Paediatrician — 12 years experience</div>
+            <div class="doctor-stats">
+              <div class="ds-item">
+                <div class="ds-num">1.8K</div>
+                <div class="ds-label">Patients</div>
+              </div>
+              <div class="ds-item">
+                <div class="ds-num">12</div>
+                <div class="ds-label">Years</div>
+              </div>
+              <div class="ds-item">
+                <div class="ds-num">4.8★</div>
+                <div class="ds-label">Rating</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-6 col-lg-3">
+        <div class="doctor-card">
+          <img src="https://hermes-zoltar.github.io/Vitalis_medical_website/images/Dr. Kemi Adeleke.avif"
+            alt="Dr. Kemi Adeleke"
+            class="doctor-photo"
+            onerror="this.src='https://images.unsplash.com/photo-1559839734-2b71ea197ec2?w=400&auto=format&fit=crop&q=75'"/>
+          <div class="doctor-specialty">Neurology</div>
+          <div class="doctor-body">
+            <div class="doctor-name">Dr. Kemi Adeleke</div>
+            <div class="doctor-title">Consultant Neurologist — 14 years experience</div>
+            <div class="doctor-stats">
+              <div class="ds-item">
+                <div class="ds-num">1.5K</div>
+                <div class="ds-label">Patients</div>
+              </div>
+              <div class="ds-item">
+                <div class="ds-num">14</div>
+                <div class="ds-label">Years</div>
+              </div>
+              <div class="ds-item">
+                <div class="ds-num">4.9★</div>
+                <div class="ds-label">Rating</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-6 col-lg-3">
+        <div class="doctor-card">
+          <img src="https://hermes-zoltar.github.io/Vitalis_medical_website/images/Dr. Tunde Balogun.avif"
+            alt="Dr. Tunde Balogun"
+            class="doctor-photo"
+            onerror="this.src='https://images.unsplash.com/photo-1622253692010-333f2da6031d?w=400&auto=format&fit=crop&q=75'"/>
+          <div class="doctor-specialty">Orthopaedics</div>
+          <div class="doctor-body">
+            <div class="doctor-name">Dr. Tunde Balogun</div>
+            <div class="doctor-title">Consultant Orthopaedic Surgeon — 20 years experience</div>
+            <div class="doctor-stats">
+              <div class="ds-item">
+                <div class="ds-num">3.1K</div>
+                <div class="ds-label">Patients</div>
+              </div>
+              <div class="ds-item">
+                <div class="ds-num">20</div>
+                <div class="ds-label">Years</div>
+              </div>
+              <div class="ds-item">
+                <div class="ds-num">5.0★</div>
+                <div class="ds-label">Rating</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section class="testimonials-section vt-section-lg" id="testimonials">
+  <div class="container">
+    <div class="row mb-5 reveal">
+      <div class="col-lg-6">
+        <div class="label-mono mb-3">Patient Stories</div>
+        <h2 class="heading-serif">The words of<br>people whose<br><em>lives changed here.</em></h2>
+      </div>
+    </div>
+    <div class="row g-4 reveal">
+      <div class="col-md-6 col-lg-4">
+        <div class="testimonial-card">
+          <span class="tc-quote-mark">"</span>
+          <div class="tc-stars">★★★★★</div>
+          <p class="tc-text">Dr. Okonkwo caught a heart condition that two other hospitals had missed entirely. The level of attention and thoroughness here is genuinely unlike anything I have experienced in Nigerian healthcare. My family will be patients here for life.</p>
+          <div class="tc-author">
+            <div class="tc-avatar">C</div>
+            <div>
+              <div class="tc-name">Chukwuemeka Ibe</div>
+              <div class="tc-detail">Cardiology Patient · Lagos</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-6 col-lg-4">
+        <div class="testimonial-card">
+          <span class="tc-quote-mark">"</span>
+          <div class="tc-stars">★★★★★</div>
+          <p class="tc-text">Bringing my three-year-old here was the most stress-free medical experience our family has had. Dr. Nwosu was patient and genuinely kind with her. My daughter asked to go back the following week. That tells you everything you need to know.</p>
+          <div class="tc-author">
+            <div class="tc-avatar">A</div>
+            <div>
+              <div class="tc-name">Amaka Osei</div>
+              <div class="tc-detail">Paediatrics Patient · Abuja</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-6 col-lg-4">
+        <div class="testimonial-card">
+          <span class="tc-quote-mark">"</span>
+          <div class="tc-stars">★★★★★</div>
+          <p class="tc-text">After four years of unexplained headaches, Dr. Adeleke identified the root cause in two appointments. I had my first completely pain-free month shortly after starting treatment. Remarkable precision. Genuine compassion. I only wish I had come sooner.</p>
+          <div class="tc-author">
+            <div class="tc-avatar">F</div>
+            <div>
+              <div class="tc-name">Funmilayo Adeyemi</div>
+              <div class="tc-detail">Neurology Patient · Lagos</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- URGENCY BANNER -->
+<section class="urgency-banner">
+  <div class="container">
+    <div class="row align-items-center gy-4 reveal">
+      <div class="col-lg-7">
+        <h2 class="ub-h2 mb-3">
+          The right time to<br>see a doctor is before<br>you feel you need to.
+        </h2>
+        <p class="ub-sub">Most of the conditions our specialists treat every day are entirely manageable when found early. Book your consultation today. Your future self will not regret it.</p>
+      </div>
+      <div class="col-lg-5 d-flex flex-wrap gap-3 justify-content-lg-end">
+        <a href="#contact" class="btn-urgency">Book Appointment <i class="fas fa-arrow-right"></i></a>
+        <a href="tel:+2348000000001" class="btn-urgency-outline"><i class="fas fa-phone"></i> Call Emergency</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section class="contact-section vt-section-lg" id="contact">
+  <div class="container">
+    <div class="row gy-5">
+      <div class="col-lg-5 reveal">
+        <div class="label-mono mb-3">Get In Touch</div>
+        <h2 class="heading-serif mb-4">Your health<br>cannot wait.<br><em>Neither should you.</em></h2>
+        <p style="font-size:0.95rem;font-weight:300;color:var(--text-2);line-height:1.85;margin-bottom:3rem;">We respond to all enquiries within 2 hours during business hours. For emergencies, call our 24-hour line directly.</p>
+        <div>
+          <div class="contact-info-item">
+            <div class="ci-icon"><i class="fas fa-location-dot"></i></div>
+            <div>
+              <div class="ci-label">Location</div>
+              <div class="ci-val">12 Kofo Abayomi Street</div>
+              <div class="ci-sub">Victoria Island, Lagos, Nigeria</div>
+            </div>
+          </div>
+          <div class="contact-info-item">
+            <div class="ci-icon"><i class="fas fa-phone"></i></div>
+            <div>
+              <div class="ci-label">Phone</div>
+              <div class="ci-val">+234 800 000 0000</div>
+              <div class="ci-sub">Emergency: +234 800 000 0001 — 24hrs</div>
+            </div>
+          </div>
+          <div class="contact-info-item">
+            <div class="ci-icon"><i class="fas fa-clock"></i></div>
+            <div>
+              <div class="ci-label">Opening Hours</div>
+              <div class="ci-val">Monday – Friday: 7AM – 9PM</div>
+              <div class="ci-sub">Saturday: 8AM – 6PM · Emergency: Always Open</div>
+            </div>
+          </div>
+          <div class="contact-info-item">
+            <div class="ci-icon"><i class="fab fa-whatsapp"></i></div>
+            <div>
+              <div class="ci-label">WhatsApp</div>
+              <div class="ci-val">Message for faster bookings</div>
+              <div class="ci-sub">Typically responds within 30 minutes</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-6 offset-lg-1 reveal">
+        <div class="form-card">
+          <div class="form-tag">Book an Appointment</div>
+          <form id="appointmentForm">
+            <div class="row g-3">
+              <div class="col-sm-6">
+                <label class="form-label-vt">First Name</label>
+                <input type="text" class="form-control-vt" placeholder="Your first name" required/>
+              </div>
+              <div class="col-sm-6">
+                <label class="form-label-vt">Last Name</label>
+                <input type="text" class="form-control-vt" placeholder="Your last name" required/>
+              </div>
+            </div>
+            <div class="row g-3">
+              <div class="col-sm-6">
+                <label class="form-label-vt">Phone Number</label>
+                <input type="tel" class="form-control-vt" placeholder="+234 000 000 0000" required/>
+              </div>
+              <div class="col-sm-6">
+                <label class="form-label-vt">Email Address</label>
+                <input type="email" class="form-control-vt" placeholder="you@example.com" required/>
+              </div>
+            </div>
+            <label class="form-label-vt">Department</label>
+            <select class="form-control-vt" required>
+              <option value="" disabled selected>Select a department</option>
+              <option>Primary Care</option>
+              <option>Cardiology</option>
+              <option>Paediatrics</option>
+              <option>Neurology</option>
+              <option>Orthopaedics</option>
+              <option>Ophthalmology</option>
+              <option>Diagnostics & Laboratory</option>
+              <option>Emergency</option>
+            </select>
+            <label class="form-label-vt">Additional Notes</label>
+            <textarea class="form-control-vt" placeholder="Describe your symptoms, concerns or anything we should know before your appointment..."></textarea>
+            <button type="submit" class="btn-form-submit">
+              Confirm Appointment <i class="fas fa-arrow-right"></i>
+            </button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="vt-footer">
+  <div class="container">
+    <div class="row gy-4">
+      <div class="col-lg-4">
+        <div class="ft-brand-name">
+          <div class="ft-brand-icon"><i class="fas fa-plus"></i></div>
+          Vitalis Medical Centre
+        </div>
+        <span class="ft-tagline">World-Class Healthcare · Victoria Island</span>
+        <p class="ft-p">Board-certified specialists, cutting-edge diagnostics and same-day appointments. Healthcare built around your outcomes, not your appointments.</p>
+        <div class="ft-social">
+          <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+          <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+          <a href="#" aria-label="Twitter"><i class="fab fa-x-twitter"></i></a>
+          <a href="#" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+        </div>
+      </div>
+      <div class="col-6 col-lg-2 offset-lg-1">
+        <div class="ft-heading">Navigate</div>
+        <a href="#services" class="ft-link">Services</a>
+        <a href="#doctors" class="ft-link">Our Doctors</a>
+        <a href="#about" class="ft-link">About Us</a>
+        <a href="#testimonials" class="ft-link">Patient Stories</a>
+        <a href="#contact" class="ft-link">Contact</a>
+      </div>
+      <div class="col-6 col-lg-2">
+        <div class="ft-heading">Services</div>
+        <a href="#services" class="ft-link">Primary Care</a>
+        <a href="#services" class="ft-link">Cardiology</a>
+        <a href="#services" class="ft-link">Paediatrics</a>
+        <a href="#services" class="ft-link">Neurology</a>
+        <a href="#services" class="ft-link">Emergency Care</a>
+      </div>
+      <div class="col-lg-3">
+        <div class="ft-heading">Contact</div>
+        <a href="tel:+2348000000000" class="ft-link">+234 800 000 0000</a>
+        <a href="tel:+2348000000001" class="ft-link">Emergency: +234 800 000 0001</a>
+        <span class="ft-link" style="cursor:default">12 Kofo Abayomi, V/I Lagos</span>
+        <span class="ft-link" style="cursor:default;color:var(--text-3)">Mon–Fri 7AM–9PM · Sat 8AM–6PM</span>
+      </div>
+    </div>
+    <hr class="footer-divider"/>
+    <div class="d-flex flex-wrap align-items-center justify-content-between gap-2">
+      <p class="footer-copy mb-0">© 2026 Vitalis Medical Centre. All rights reserved.</p>
+      <p class="footer-copy mb-0">Built by <a href="#">Derek Tech Sage</a></p>
+    </div>
+  </div>
+</footer>
+
+<!-- EMERGENCY FLOAT -->
+<div class="emergency-float">
+  <a href="https://wa.me/2348000000000" target="_blank" rel="noopener" class="ef-btn ef-whatsapp">
+    <i class="fab fa-whatsapp"></i>
+    <span>WhatsApp Us</span>
+  </a>
+  <a href="tel:+2348000000001" class="ef-btn ef-emergency">
+    <i class="fas fa-phone"></i>
+    <span>Emergency Line</span>
+  </a>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/js/bootstrap.bundle.min.js"></script>
+<script>
+// NAV
+// NAV
+const nav = document.getElementById('nav');
+window.addEventListener('scroll', () => {
+  if (nav) nav.classList.toggle('stuck', window.scrollY > 60);
+});
+
+// MOBILE NAV
+const burger = document.getElementById('burger');
+const mobNav = document.getElementById('mobNav');
+const mobClose = document.getElementById('mobClose');
+
+function openNav() {
+  if (mobNav) {
+    mobNav.style.cssText = 'display:flex !important; position:fixed; inset:0; background:var(--navy); z-index:9999; flex-direction:column; align-items:center; justify-content:center; gap:2.2rem;';
+    document.body.style.overflow = 'hidden';
+  }
+}
+
+function closeNav() {
+  if (mobNav) {
+    mobNav.style.display = 'none';
+    document.body.style.overflow = '';
+  }
+}
+
+if (burger) burger.addEventListener('click', openNav);
+if (mobClose) mobClose.addEventListener('click', closeNav);
+if (mobNav) {
+  mobNav.querySelectorAll('a').forEach(a => a.addEventListener('click', closeNav));
+  }
+
+// SCROLL REVEAL
+const reveals = document.querySelectorAll('.reveal');
+const ro = new IntersectionObserver((entries) => {
+  entries.forEach((e, i) => {
+    if (e.isIntersecting) {
+      setTimeout(() => e.target.classList.add('on'), i * 100);
+      ro.unobserve(e.target);
+    }
+  });
+}, { threshold: 0.07 });
+reveals.forEach(el => ro.observe(el));
+
+// FORM
+document.getElementById('appointmentForm').addEventListener('submit', function(e) {
+  e.preventDefault();
+  const btn = this.querySelector('.btn-form-submit');
+  const orig = btn.innerHTML;
+  btn.innerHTML = '<i class="fas fa-check"></i> Appointment Request Received';
+  btn.style.background = '#1a6b3a';
+  btn.style.color = '#fff';
+  setTimeout(() => {
+    btn.innerHTML = orig;
+    btn.style.background = '';
+    btn.style.color = '';
+    this.reset();
+  }, 5000);
+});
+</script>
+</body>
+</html>
